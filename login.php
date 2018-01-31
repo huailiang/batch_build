@@ -1,0 +1,22 @@
+<!--
+data: 2018-01-24
+auth: huailiang.peng
+功能:  登录页面
+//-->
+
+<html>
+<title>龙之谷-线上AB打包系统</title>
+<head><link rel="stylesheet" href="style.css" type="text/css"></head>
+
+<body>
+<b>龙之谷补丁登录系统</b>
+<div class="login">
+	<form action="main.php" method="post">
+	<input type="text" name="name" placeholder="Username" required="required" ><br>
+	<input type="password" name="pawd" placeholder="Password" required="required"><br>
+	<button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+	</form>
+</div>
+
+</body>
+</html>

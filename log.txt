@@ -1,0 +1,21 @@
+channel:android type:2
+上传开始,version:1.10001.6
+hotfix/Android
+正在上传: Android manifest...
+开始上传对应的资源文件夹
+上传成功
+开始提升版本号
+Android 操作结束
+
+
+channel:ios type:2
+上传开始,version:1.10001.6
+hotfix/IOS
+正在上传: IOS manifest...
+开始上传对应的资源文件夹
+上传成功
+开始提升版本号
+ios 操作结束
+
+
+*********************************
