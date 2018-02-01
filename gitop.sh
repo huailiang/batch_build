@@ -9,7 +9,7 @@
 
 PROJECT_RES=/Users/dn/Documents/patch_res
 
-PROJECT_SRC=/Users/dn/Documents/patch_src
+PROJECT_SRC=/Users/dn/Documents/src
 
 UNITY_PATH=/Applications/Unity/Unity5.app/Contents/MacOS/Unity
 
@@ -23,17 +23,13 @@ git config --global merge.ours.driver true
 
 cd ${PROJECT_RES}
 
-git reset --hard | git clean -df
+git reset --hard | git clean -dfq
 
 #echo "checkout res ob"
 
 # git checkout OB
 
-git pull
-
-if [ $? -ne 0 ];then
-     echo "error git pull"
-fi
+git pull -q
 
 git log -1
 
@@ -61,15 +57,15 @@ git log -1
 
 # cd $PROJECT_SRC/
 
-# git add -A .
-
-# git reset --hard HEAD^
+# git reset --hard | git clean -dfq
 
 # echo "checkout res ob"
 
 # git checkout OB
 
 # git pull
+
+#git log -1
 
 # ehco "checkout res release"
 

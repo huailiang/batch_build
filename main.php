@@ -51,6 +51,12 @@ auth: huailiang.peng
         var doing;
         var timer;
 
+        window.addEventListener("beforeunload", function (e) {
+            var confirmationMessage = '确定离开此页吗？';
+            (e || window.event).returnValue = confirmationMessage;     
+            return confirmationMessage;                               
+        });
+    
         function createXMLHttpRequest()
         {   
             //检查浏览器是否支持 XMLHttpRequest 对象  
@@ -64,10 +70,11 @@ auth: huailiang.peng
             }    
         }    
 
-        function refresh(v1,v2)
+        function refresh(v1,v2,busy)
         {
         	document.getElementById("state").innerHTML=v1
         	document.getElementById("content").value = v2;
+            document.getElementById("busy").style.display=busy;
         }
 
         function fun(n)
@@ -84,23 +91,33 @@ auth: huailiang.peng
             {
                 alert("当前步不能回退");
             }
+            else if(n.value == 3)
+            {
+                var res = confirm("确定推送正式服吗，这样会提升版本号？");
+                if(res == true){
+                    doclick(n);
+                }
+            }
             else
             {
-                doing=true;
-        	    step = n.value;
-        	    refresh("正在构建步骤"+ step +"中, 请稍后...","");
-                createXMLHttpRequest();    
-                var url="server.php";    
-                //xmlHttp.timeout = 3000000;
-                xmlHttp.open("POST",url,true);   
-                xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');  
-                xmlHttp.onreadystatechange = callback;  
-               // xmlHttp.ontimeout=function(event){ alert("req setTimeout!"); window.clearInterval(timer); doing=false;}  
-                xmlHttp.send("action=" + step);    
-                window.clearInterval(timer);
-                timer=window.setInterval(ontimer,500); 
+                doclick(n);
             }
 		}
+
+        function doclick(n)
+        {
+            doing=true;
+            step = n.value;
+            refresh("正在构建步骤"+ step +"中, 请稍后 ","","inline");
+            createXMLHttpRequest();    
+            var url="server.php";    
+            xmlHttp.open("POST",url,true);   
+            xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');  
+            xmlHttp.onreadystatechange = callback;   
+            xmlHttp.send("action=" + step);    
+            window.clearInterval(timer);
+            timer=window.setInterval(ontimer,500); 
+        }
              
         function ontimer()
         {  
@@ -108,7 +125,7 @@ auth: huailiang.peng
             req.open("POST","log.txt",false);   
             req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');      
             req.send(null);    
-            refresh("正在构建步骤"+ step +"中, 请稍后...",req.responseText);
+            refresh("正在构建步骤"+ step +"中, 请稍后 ",req.responseText,"inline");
         }
 
         function callback()
@@ -125,7 +142,7 @@ auth: huailiang.peng
                     req.open("POST","log.txt",false);   
                     req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');     
                     req.send(null);    
-                    refresh("完成构建步骤"+ step ,req.responseText);  
+                    refresh("完成构建步骤"+ step ,req.responseText,"none");  
                     
                     window.clearInterval(timer);
                     doing=false;
@@ -158,12 +175,11 @@ auth: huailiang.peng
         <button type="button" class="btn" id="btn3" onclick="fun(this)" value="3">3.推送正式 版本号提升</button>
         <button type="button" class="btn" id="btn4" onclick="fun(this)" value="4">4.重新开始 回退</button>  
     </div>  
-    <br>
+    <br/>
     <label id="state"></label>
-    <br />
-    <textarea rows="50" cols="240" readOnly=true id="content" >
-		这里是文本域中的文本 ... ... ... ...
-	</textarea>
+    <img id="busy" src="spinner.gif" style="display:none">
+    <br/><br/>
+    <textarea rows="50" cols="240" readOnly=true id="content" style="border-style:none"></textarea>
 	</body>
 
 

@@ -18,7 +18,7 @@ function gitopt() {
     git checkout .
     git fetch -p
     git checkout ${target_branch}
-    git pull
+    git pull -q
     git log -1
 }
 
@@ -26,11 +26,12 @@ function gitopt() {
 
 echo "******************* android ***********************"
 
-echo "android git-release拉到最新"
+echo "android git 还原环境，拉到最新"
 
 cd ${PROJECT_Android}
 
 gitopt
+
 
 echo "开始生成Android 补丁，请耐心等待..."
 
@@ -54,16 +55,16 @@ sh ${Shelll_Path}/upload.sh "android" 1
 echo "\n\n"
 
 
-
 ######################### ios ###########################
 
 echo "******************* ios ***********************"
 
-echo "iOS git-release拉到最新"
+echo "iOS git 还原环境，拉到最新"
 
 cd ${PROJECT_Ios}
 
 gitopt
+
 
 echo "开始生成iOS补丁，请耐心等待..."
 

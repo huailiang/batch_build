@@ -1,21 +1,45 @@
-channel:android type:2
-上传开始,version:1.10001.6
-hotfix/Android
-正在上传: Android manifest...
-开始上传对应的资源文件夹
-上传成功
-开始提升版本号
-Android 操作结束
+stat reset res option
+HEAD is now at 08dcd27d27f push version android-1.10005.2
+res current status:
+commit 08dcd27d27f7d439af4afd29c22f633bef5170c2
+Author: System Administrator <root@ci-mac-pro-2.local>
+Date:   Thu Feb 1 12:45:20 2018 +0800
+
+    push version android-1.10005.2
+git cleanup finish
 
 
-channel:ios type:2
-上传开始,version:1.10001.6
-hotfix/IOS
-正在上传: IOS manifest...
-开始上传对应的资源文件夹
-上传成功
-开始提升版本号
-ios 操作结束
+start reset src option
+HEAD is now at 08dcd27d27f push version android-1.10005.2
+src current status
+commit 08dcd27d27f7d439af4afd29c22f633bef5170c2
+Author: System Administrator <root@ci-mac-pro-2.local>
+Date:   Thu Feb 1 12:45:20 2018 +0800
+
+    push version android-1.10005.2
+clean src finish
 
 
-*********************************
+start reset android env
+HEAD is now at 08dcd27d27f push version android-1.10005.2
+android env current status:
+commit 08dcd27d27f7d439af4afd29c22f633bef5170c2
+Author: System Administrator <root@ci-mac-pro-2.local>
+Date:   Thu Feb 1 12:45:20 2018 +0800
+
+    push version android-1.10005.2
+reset android env finish
+
+
+start reset ios env
+HEAD is now at 08dcd27d27f push version android-1.10005.2
+ios evn current status:
+commit 08dcd27d27f7d439af4afd29c22f633bef5170c2
+Author: System Administrator <root@ci-mac-pro-2.local>
+Date:   Thu Feb 1 12:45:20 2018 +0800
+
+    push version android-1.10005.2
+reset ios env finish
+
+
+*************************************

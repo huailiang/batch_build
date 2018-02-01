@@ -24,7 +24,7 @@ auth: huailiang.peng
               echo "<td>".$row["Name"]."</td>";
               echo "<td align='center'>".$row["Opt"]."</td>";
               echo "<td>".$row["Stamp"]."</td>";
-              echo "<td><a href='loglist.php?log=".$row["log"]."'>".$row["log"]."</a></td>";
+              echo "<td><a href='loglist.php?log=".$row["log"]."&index=".$index."'>".$row["log"]."</a></td>";
               echo "</tr>";
               $index=$index+1;
           }

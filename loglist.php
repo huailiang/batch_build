@@ -9,6 +9,7 @@ auth: huailiang.peng
 
 	<?php 
         $id=$_GET['log'];
+        $index=$_GET['index'];
         $log="log/".$id.".log";
         if(file_exists($log))
         {
@@ -16,6 +17,11 @@ auth: huailiang.peng
             $txt = file_get_contents($log);
             $txt = preg_replace('/\n|\r\r/', '<br>', $txt);
             echo $txt;
+        }
+        elseif ($index==1) 
+        {
+            # code...
+            echo "日志正在生成，请等待当前步骤完成";
         }
         else
         {

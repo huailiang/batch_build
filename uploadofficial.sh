@@ -24,7 +24,6 @@ fi
 
 echo "Android 操作结束\n\n"
 
-
 ######################### ios ###########################
 
 sh ${Shelll_Path}/upload.sh "ios" 2 
