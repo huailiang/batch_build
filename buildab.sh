@@ -24,7 +24,7 @@ function gitopt() {
 
 ######################### androids ###########################
 
-echo "******************* android ***********************"
+echo "****************** android **********************"
 
 echo "android git 还原环境，拉到最新"
 
@@ -33,7 +33,7 @@ cd ${PROJECT_Android}
 gitopt
 
 
-echo "开始生成Android 补丁，请耐心等待..."
+echo "\n开始生成Android 补丁，请耐心等待..."
 
 $UNITY_PATH -quit -batchmode -projectPath ${PROJECT_Android}"/XProject" -logFile /tmp/patch_and_abbuild.log -executeMethod XBundlePresent.JenkinsPatch
 
@@ -66,7 +66,7 @@ cd ${PROJECT_Ios}
 gitopt
 
 
-echo "开始生成iOS补丁，请耐心等待..."
+echo "\n开始生成iOS补丁，请耐心等待..."
 
 $UNITY_PATH -quit -batchmode -projectPath ${PROJECT_Ios}"/XProject" -logFile /tmp/patch_ios_abbuild.log -executeMethod XBundlePresent.JenkinsPatch
 
@@ -87,5 +87,5 @@ sh ${Shelll_Path}/upload.sh "ios" 1
 
 echo "上传全部完成，请 QA 验收-- 如果中间有回退操作，请等待 cdn同步"
 
-echo "\n\n******************************************"
+echo "\n\n*******************************************"
 

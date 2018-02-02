@@ -1,45 +1,43 @@
-stat reset res option
-HEAD is now at 08dcd27d27f push version android-1.10005.2
-res current status:
-commit 08dcd27d27f7d439af4afd29c22f633bef5170c2
-Author: System Administrator <root@ci-mac-pro-2.local>
-Date:   Thu Feb 1 12:45:20 2018 +0800
+****************** android **********************
+android git 还原环境，拉到最新
+Your branch is behind 'origin/release_jenkins' by 5 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+commit e795e213c0de7d39334a7b27da079c6e1b42df50
+Author: alexpeng <alexpeng@123u.com>
+Date:   Fri Feb 2 15:53:12 2018 +0800
 
-    push version android-1.10005.2
-git cleanup finish
+    [ob+7] update 1.10011.1
 
-
-start reset src option
-HEAD is now at 08dcd27d27f push version android-1.10005.2
-src current status
-commit 08dcd27d27f7d439af4afd29c22f633bef5170c2
-Author: System Administrator <root@ci-mac-pro-2.local>
-Date:   Thu Feb 1 12:45:20 2018 +0800
-
-    push version android-1.10005.2
-clean src finish
+开始生成Android 补丁，请耐心等待...
+Android 补丁生成完毕, android 测试服上传开始...
+channel:android type:1
+上传开始,version:1.10011.1
+cdn/image.lzgjx.qq.com/QATest/Patch/Live/Android
+正在上传: Android manifest...
+开始上传对应的资源文件夹
+上传成功
 
 
-start reset android env
-HEAD is now at 08dcd27d27f push version android-1.10005.2
-android env current status:
-commit 08dcd27d27f7d439af4afd29c22f633bef5170c2
-Author: System Administrator <root@ci-mac-pro-2.local>
-Date:   Thu Feb 1 12:45:20 2018 +0800
 
-    push version android-1.10005.2
-reset android env finish
+******************* ios ***********************
+iOS git 还原环境，拉到最新
+Your branch is behind 'origin/release_jenkins' by 4 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+commit e795e213c0de7d39334a7b27da079c6e1b42df50
+Author: alexpeng <alexpeng@123u.com>
+Date:   Fri Feb 2 15:53:12 2018 +0800
+
+    [ob+7] update 1.10011.1
+
+开始生成iOS补丁，请耐心等待...
+iOS 补丁生成完毕, ios 测试服上传开始...
+channel:ios type:1
+上传开始,version:1.10011.1
+cdn/image.lzgjx.qq.com/QATest/Patch/Live/IOS
+正在上传: IOS manifest...
+开始上传对应的资源文件夹
+上传成功
+上传全部完成，请 QA 验收-- 如果中间有回退操作，请等待 cdn同步
 
 
-start reset ios env
-HEAD is now at 08dcd27d27f push version android-1.10005.2
-ios evn current status:
-commit 08dcd27d27f7d439af4afd29c22f633bef5170c2
-Author: System Administrator <root@ci-mac-pro-2.local>
-Date:   Thu Feb 1 12:45:20 2018 +0800
-
-    push version android-1.10005.2
-reset ios env finish
-
-
-*************************************
+*******************************************

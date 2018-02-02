@@ -179,7 +179,7 @@ auth: huailiang.peng
     <label id="state"></label>
     <img id="busy" src="spinner.gif" style="display:none">
     <br/><br/>
-    <textarea rows="50" cols="240" readOnly=true id="content" style="border-style:none"></textarea>
+    <textarea rows="56" cols="260" readOnly=true id="content" style="border-style:none"></textarea>
 	</body>
 
 

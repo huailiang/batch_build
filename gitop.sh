@@ -45,9 +45,9 @@ function gitoption() {
 #cd ${PROJECT_SRC} && echo "********** src *********" && gitoption release-src
 
 #测试代码
-cd ${PROJECT_RES} && git clean -dfq && git reset --hard && git checkout release_jenkins && git pull
+cd ${PROJECT_RES} && git clean -dfq && git reset --hard && git checkout release_jenkins && git pull -q && git log -1
 
-echo "git 操作结束"
+echo "git 操作结束\n"
 
 echo "开始统计文件变更列表，请耐心等待..."
 

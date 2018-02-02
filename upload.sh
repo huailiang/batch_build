@@ -8,12 +8,17 @@ TYPE="$2"
 echo "channel:"${CHANNEL}" type:"${TYPE}
 
 SUB="Android"
+BRAN="QATest"
 
 PROJECT_PATH=/Users/dn/Documents/patch_android/XProject
 
 if [ ${CHANNEL} == "ios" ];then
 SUB="IOS"
 PROJECT_PATH=/Users/dn/Documents/patch_ios/XProject
+fi
+
+if [ ${TYPE} == 2 ];then
+	BRAN="Official"
 fi
 
 VERSION=`cat ${PROJECT_PATH}/Shell/next-version.txt`
@@ -30,11 +35,12 @@ cd ${PROJECT_PATH}/Assets/Bundle/${SUB}
 
 # upload the manifest at first
 
+#/usr/local/bin/lftp ftp.swift.qq.com -u fworks_889 -p 9052 --password NE@d216drAg << EOF
 /usr/local/bin/lftp -u dn,up.dn.123u 42.62.51.126 << EOF
 
-echo hotfix/${SUB}
+echo cdn/image.lzgjx.qq.com/${BRAN}/Patch/Live/${SUB}
 
-cd hotfix/${SUB}
+cd cdn/image.lzgjx.qq.com/${BRAN}/Patch/Live/${SUB}
 
 echo "正在上传: "${SUB}" manifest..."
 
@@ -51,9 +57,10 @@ if [ -d ${VERSION} ];then
 
 cd ${VERSION}
 	
+#/usr/local/bin/lftp ftp.swift.qq.com -u fworks_889 -p 9052 --password NE@d216drAg << EOF
 /usr/local/bin/lftp -u dn,up.dn.123u 42.62.51.126 << EOF
 
-cd hotfix/${SUB}
+cd cdn/image.lzgjx.qq.com/${BRAN}/Patch/Live/${SUB}
 
 echo "开始上传对应的资源文件夹"
 
