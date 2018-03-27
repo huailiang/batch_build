@@ -1,4 +1,4 @@
-#!/bin/sh
+ #!/bin/sh
 
 UNITY_PATH=/Applications/Unity/Unity5.app/Contents/MacOS/Unity
 

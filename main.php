@@ -3,29 +3,30 @@ data: 2018-01-24
 auth: huailiang.peng
 功能:  此脚本主要处理登录信息 页面布局 事件处理
 //-->
-
+<?php ob_start(); ?>
 <html>
 <head><link rel="stylesheet" href="style.css" type="text/css"></head>
 <title>龙之谷-AB打包系统</title>
 	<body>
 
 	<?php 
-		$ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://gameadm.123u.com/ldap.php');
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_POST, 1);//post提交方式
-        $curlPost = 'u=' . $_POST["name"] . '&p=' . urlencode($_POST["pawd"] );
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
-        $auth_rs = curl_exec($ch);
-        curl_close($ch);
-        $auth = json_decode($auth_rs);
-        if ($auth->auth == false) 
-        {
-            echo "对不起，用户名不存在或者密码不正确";
-            return;
-        }
+        
+		// $ch = curl_init();
+  //       curl_setopt($ch, CURLOPT_URL, 'https://gameadm.123u.com/ldap.php');
+  //       curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+  //       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  //       curl_setopt($ch, CURLOPT_HEADER, 0);
+  //       curl_setopt($ch, CURLOPT_POST, 1);//post提交方式
+  //       $curlPost = 'u=' . $_POST["name"] . '&p=' . urlencode($_POST["pawd"] );
+  //       curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
+  //       $auth_rs = curl_exec($ch);
+  //       curl_close($ch);
+  //       $auth = json_decode($auth_rs);
+  //       if ($auth->auth == false) 
+  //       {
+  //           echo "对不起，用户名不存在或者密码不正确";
+  //           return;
+  //       }
 
 		require_once('./db.php');
         $query=DB::exist($_POST["name"]);
@@ -36,10 +37,12 @@ auth: huailiang.peng
         }
         else
         {
-          DB::update($_POST["name"]);
-		  echo "<b>欢迎使用线上 ab打包系统</b>  &nbsp&nbsp&nbsp<a href='readme.html' target='_blank'>说明文档</a><br><br>";
-		  setcookie("name",$_POST["name"],time()+360000);
-		  setcookie("pawd",$_POST["pawd"],time()+360000);
+                        setcookie("name",$_POST["name"],time()+360000);
+            setcookie("pawd",$_POST["pawd"],time()+360000);
+            ob_end_flush();
+            DB::update($_POST["name"]);
+		    echo "<b>欢迎使用线上 ab打包系统</b>  &nbsp&nbsp&nbsp<a href='read.html' target='_blank'>说明文档</a><br><br>";
+		  
         }
 
 	?>	
