@@ -74,4 +74,4 @@ unity 支持以batch的模式打包，需要c#测预留好接口，Shell可以�
 	日志列表第一个链接如果是空，说明当前当做还在进行，进行完了日志就生成了
 
 
-联系作者：penghuailiang@126.com
+联系作者：peng_huailiang@qq.com
