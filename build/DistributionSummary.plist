@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Unity-iPhone.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>BBFC343F4D3AB8391C41216D092CE5DC4C7607FA</string>
+				<key>dateExpires</key>
+				<string>4/21/20</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>8VLYWLCLEX.com.perfectworld.cfgame</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>8VLYWLCLEX</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>8VLYWLCLEX.com.perfectworld.cfgame</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>cfgame.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>760d1b14-d799-4f42-b43d-a7adc018b4da</string>
+				<key>name</key>
+				<string>JoyYouUniversal</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>8VLYWLCLEX</string>
+				<key>name</key>
+				<string>Shanghai Jiang You Information Technology Company Limited</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -4,42 +4,7 @@
     </a>
 </p>
 
-
-# Batch Build
-
-<b>此项目包含两部分内容：</b>
-
-- 出包脚本   build目录
-
-- 出补丁脚本 build_ab目录
-
-
-<b>Jenkins出包脚本:</b>
-
-unity 支持以batch的模式打包，需要c#测预留好接口，Shell可以直接调用c#接口用以出包
-
-如何安装jenkins， 可以参考读者的一篇文章: https://huailiang.github.io/2018/02/27/autopublish/
-
-进入build目录，shell脚本说明：
-
-- build_android.sh   用以出android包，生成apk
-- build_ios.sh 	   	 用以出ios包，生成ipa 需要配置和脚本里对应的证书
-- build_windows.sh   用以生成windows包，生成zip
-- build_ios_batch.sh 可以指定git某个节点，生成ios包
-- git.sh   			 git切分支，清理本地环境，拉取最新
-- git_tag.sh 		 git清理环境，切到制定节点，跟分支无关
-- qrcode.sh    		 用以生成二维码下载链接，如果是ios平台，需要相关企业证书和搭建支持items-services协议的环境
-- sendmail.sh        打包生成后，给打包人发送邮件
-- upload.sh          上传包体到本地web服务器，同时生成下载链接，作者在本地mac上搭建了一个apache服务器
-- xbuild2dll.sh      将代码编程dll, 需要本地安装了MonoDeveloper
-- mailformat		 邮件内容格式
-
-
-
-<b>打补丁说明文档:</b>
-
-进入build_ab目录：
-
+<b>龙之谷打补丁说明文档:</b>
 
 1. 请严格按照步骤顺序执行，不要跨步操作
 
