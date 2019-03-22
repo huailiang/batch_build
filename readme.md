@@ -1,9 +1,3 @@
-﻿<p align="center">
-    <a href="https://huailiang.github.io/" target="_blank">
-    	<img src="https://huailiang.github.io/img/avatar-Alex-home.jpg" width="320" height="300">
-    </a>
-</p>
-
 
 # Batch Build
 
