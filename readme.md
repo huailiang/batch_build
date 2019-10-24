@@ -26,8 +26,19 @@ unity 支持以batch的模式打包，需要c#测预留好接口，Shell可以�
 - sendmail.sh        打包生成后，给打包人发送邮件
 - upload.sh          上传包体到本地web服务器，同时生成下载链接，作者在本地mac上搭建了一个apache服务器
 - xbuild2dll.sh      将代码编程dll, 需要本地安装了MonoDeveloper
+- symbol.sh 		 用来将符号表上传到bugly服务器 ios
 - mailformat		 邮件内容格式
 
+
+jenkins 支持脚本的方式调用：
+
+安装python-jenkins
+
+```sh
+sudo pip3 install python-jenkins
+```
+
+- operation.py 展示了如何获取jenkins的信息， 并通过脚本触发job, 通过这样的操作就可以写定时器远程自动触发， 生成独有的uid等
 
 
 <b>打补丁说明文档:</b>
