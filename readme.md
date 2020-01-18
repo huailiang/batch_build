@@ -12,7 +12,7 @@
 
 unity 支持以batch的模式打包，需要c#测预留好接口，Shell可以直接调用c#接口用以出包
 
-如何安装jenkins， 可以参考读者的一篇文章: https://huailiang.github.io/2018/02/27/autopublish/
+如何安装jenkins， 可以参考作者的一篇文章: https://penghuailiang.gitee.io/blog/2018/autopublish/
 
 进入build目录，shell脚本说明：
 
