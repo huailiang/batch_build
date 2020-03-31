@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.pwrd.build</string>
+	<key>Program</key>
+	<string>/Users/penghuailiang/Documents/shells/timerjob.sh</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string></string>
+		<string>master</string>
+		<string>10.253.17.49:25001</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/tmp/run-err.log</string>
+	<key>StandardInPath</key>
+	<string>/tmp/run-in.log</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/run-out.log</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Minute</key>
+		<integer>1</integer>
+	</dict>
+</dict>
+</plist>
