@@ -38,8 +38,14 @@ function todo_zip_table(){
 		# 将file的后缀.lua.txt去掉
 		name=${file//.lua.txt/} 
 
+		if [[ $name == *.meta ]]; then
+			continue
+		fi
+
+		if [ ${name}x != "table"x ]; then
 		# copy bundle res目录下生成的bytes到streamingassets目录
 		cp BundleRes/Table/${name}.bytes StreamingAssets/table/
+		fi
 	done
 
 	cd StreamingAssets

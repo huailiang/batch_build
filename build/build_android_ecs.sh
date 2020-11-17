@@ -1,10 +1,11 @@
 # ==============================================
-# This tool is for Create iOS & OSX c++ library
+# This tool is for Create android ecs .so
 # ----------------------------------------------
 # Auth:   Huailiang.Peng
-# Data:   2019.12.11
+# Data:   2019.12.25
 # ==============================================
-#!/bin/sh
+#!/bin/bash -ilex
+
 
 
 # 外部需要传 主工程的路径+Unity Project Name
@@ -13,11 +14,13 @@ echo "git -- 参数个数不对"
 exit 1; 
 fi 
 
-ECSPATH=/Users/penghuailiang/Documents/projects/XEcs
+NDKBUILD=/Users/penghuailiang/Documents/software/eclipse/android-ndk-r20b/ndk-build
 
+ECSPATH=/Users/penghuailiang/Documents/projects/jni
 
 
 cd ${ECSPATH}
+
 
 git prune
 
@@ -50,19 +53,21 @@ echo  "当前编译ecs节点: "
 
 git log -1
 
-sh generate_ios.sh > ecs_${uid}.txt
+cp ~/Documents/shells/Android.mk .
 
-rm -f ${1}/Assets/Plugins/iOS/libXuthus.a
+cp ~/Documents/shells/Application.mk .
 
-if [ ! -d "${1}/Assets/Plugins/iOS/" ];then
+rm -rf XEcs/XClientEcs/swigwin-4.0.0
 
-mkdir ${1}/Assets/Plugins/iOS/
+$NDKBUILD clean
 
-fi
+$NDKBUILD > ecs_{uid}.txt
 
-mv Plugins/iOS/libXuthus.a ${1}/Assets/Plugins/iOS/
+echo ${1}
 
-mv ecs_${uid}.txt /Library/WebServer/Documents/ecs
+cp ../libs/armeabi-v7a/libXuthus.so ${1}/Assets/Plugins/Android/libs/armeabi-v7a/
 
-echo "ecs日志：http://10.253.48.151/ecs/ecs_${uid}.txt"
+cp ../libs/x86/libXuthus.so ${1}/Assets/Plugins/Android/libs/x86/
+
+echo "编译ecs结束"
 echo  " "   # blank line 

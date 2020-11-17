@@ -3,6 +3,7 @@
 
 # ==============================================
 # 用来生成二维码图片
+# Author: Huailiang.Peng
 # arg1: 包名
 # ==============================================
 
@@ -30,4 +31,4 @@ cd /Library/WebServer/Documents/
 
 /usr/bin/php generateQR.php ${name} ${plat}
 
-echo "二维码地址：http://10.253.48.98/qrimg/"${name}".png"
+echo "二维码地址：http://10.253.48.151/qrimg/"${name}".png"

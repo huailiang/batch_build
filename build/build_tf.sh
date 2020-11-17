@@ -83,7 +83,7 @@ OUTPUT=${PACK_PATH}/ipa
 
 if [ ! -d "$OUTPUT" ]; then  
 	echo "not found build folfer, sorry"
-	sh build_log.sh ios_${version}_${build}.log 
+	sh build_log.sh ios_${version}_${build}.log ${PROJPATH}/OPProject
 	exit 1
 fi
 

@@ -6,23 +6,20 @@
 # ==============================================
 #!/bin/bash 
 
-
-echo -e "打包参数: \n - uid:  "${uid}" \n - 分支: "${branch}" \n - 编译宏: "${macro}" \n"
+echo "打包参数 uid is:"${uid}" sha is:"${SHA}" macro:"${macro}
 
 #游戏工程目录#
 PROJPATH=/Users/penghuailiang/Documents/projects/op_win
 
-TARGET=win32_${uid}_${branch}.zip
+TARGET=win32_${uid}_${SHA}.zip
 
 cd `dirname $0`
 
-sh clean_bundle.sh ${PROJPATH}/OPProject
+sh clean_bundle.sh ${PROJPATH} 
 
-sh git.sh ${PROJPATH} 
+sh git_tag.sh ${PROJPATH} ${SHA}
 
-# sh xbuild2dll.sh ${PROJPATH}/OPProject/Assets/Lib
-
-echo ${branch}"-"${uid}>${PROJPATH}/OPProject/Assets/Resources/packinfo.txt
+echo ${SHA}"-"${uid}>${PROJPATH}/OPProject/Assets/Resources/packinfo.txt
 
 cd ${PROJPATH}/OPProject/Win32/
 
@@ -52,7 +49,5 @@ echo -e "zip finish\n"
 cd `dirname $0`
 
 sh upload.sh ${PROJPATH}/OPProject ${TARGET}
-
-# sh sendmail.sh ${TARGET}
 
 sh build_log.sh win_debug_${uid}.log ${PROJPATH}/OPProject

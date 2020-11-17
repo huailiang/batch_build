@@ -2,26 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>compileBitcode</key>
-	<false/>
 	<key>destination</key>
 	<string>export</string>
 	<key>method</key>
-	<string>development</string>
+	<string>app-store</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.ningyunet.cfgame</key>
-		<string>cfgame</string>
+		<key>com.pwrd.luoqi</key>
+		<string>luoqiDis</string>
 	</dict>
 	<key>signingCertificate</key>
-	<string>iPhone Developer</string>
+	<string>B025D4BE74561A80410EA77D6A8211BB12C31889</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>
-	<string>AH272BR984</string>
-	<key>thinning</key>
-	<string>&lt;none&gt;</string>
+	<string>RPQM55T9QE</string>
+	<key>uploadSymbols</key>
+	<false/>
 </dict>
 </plist>

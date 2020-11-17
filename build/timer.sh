@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # ==============================================
-# 此脚本由Jenkins触发 生成本地配置 timer.plist
-# 然后由系统定时调用plist指定的脚本timerjob.sh
-# 	参考：https://my.oschina.net/shede333/blog/470377
-#   查看进程是否开启： launchctl list | grep com.pwrd
+# 定时触发任务 timer
+# 	https://my.oschina.net/shede333/blog/470377
+# 
+#  plist 放置： ~/Library/LaunchAgents 由用户自己定义的任务项
+#  查看进程是否开启： launchctl list | grep com.pwrd
 # ==============================================
 
 echo "参数 branch: "${branch}" loginserver: "${loginserver}

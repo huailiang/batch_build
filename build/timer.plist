@@ -9,7 +9,7 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string></string>
-		<string>master</string>
+		<string>OB_New</string>
 		<string>10.253.17.49:25001</string>
 	</array>
 	<key>StandardErrorPath</key>

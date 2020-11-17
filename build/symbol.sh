@@ -20,13 +20,23 @@ cd ${1}/Mods/buglySymboliOS/
 
 rm -rf *.zip
 
-dSYM=${1}/IOS/cfgame/cfgame.app.dSYM
+# unity2019.2 or older
+# TARGET=cfgame.app.dSYM
+
+# unity2019.3 later
+TARGET=UnityFramework.framework
+
+BUGLY_KEY=eafbe557-8de5-4451-af90-a8070b70ddc0
+
+dSYM=${1}/IOS/cfgame/${TARGET}
 
 if [ -d "${dSYM}" ]; then
 
 cp -rf ${dSYM} ./
 
-java -jar buglySymboliOS.jar -i cfgame.app.dSYM -u -id 95e714f5db -key eafbe557-8de5-4451-af90-a8070b70ddc0 -package com.ningyunet.cfgame -version ${VERSION}
+java -jar buglySymboliOS.jar -i ${TARGET} -u -id 95e714f5db -key ${BUGLY_KEY} -package com.ningyunet.cfgame -version ${VERSION}
+
+sh zip_dsym.sh
 
 # 主要是用来备份（手动上传），因为有时候上传失败
 cp *.zip /Library/WebServer/Documents/symbol/
@@ -40,8 +50,6 @@ do
 	cp ${filename}.txt /Library/WebServer/Documents/symbol/
 	echo "符号表文件：http://10.253.48.151/symbol/"${filename}.zip
 done
-
-echo "********	buglySymboliOS upload success  ***********"
 
 else
 

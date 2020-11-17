@@ -4,6 +4,7 @@
 # ==============================================
 # git operation
 # 切到某个节点 传过来的是commit的sha值
+# Author: Huailiang.Peng
 # ----------------------------------------------
 # arg1: workspace
 # arg2: commit-id
