@@ -7,7 +7,7 @@
 #!/bin/sh
 
 if [ $# != 1 ] ; then 
-echo "git -- 参数个数不对" 
+echo "symbol -- 参数个数不对" 
 exit 1; 
 fi 
 
@@ -24,17 +24,21 @@ rm -rf *.zip
 # TARGET=cfgame.app.dSYM
 
 # unity2019.3 later
-TARGET=UnityFramework.framework
+TARGET=UnityFramework.framework.dSYM
 
 BUGLY_KEY=eafbe557-8de5-4451-af90-a8070b70ddc0
 
+BUGLY_ID=95e714f5db
+
 dSYM=${1}/IOS/cfgame/${TARGET}
+
+echo ${dSYM}
 
 if [ -d "${dSYM}" ]; then
 
 cp -rf ${dSYM} ./
 
-java -jar buglySymboliOS.jar -i ${TARGET} -u -id 95e714f5db -key ${BUGLY_KEY} -package com.ningyunet.cfgame -version ${VERSION}
+java -jar buglySymboliOS.jar -i ${TARGET} -u -id ${BUGLY_ID} -key ${BUGLY_KEY} -package com.ningyunet.cfgame -version ${VERSION}
 
 sh zip_dsym.sh
 
